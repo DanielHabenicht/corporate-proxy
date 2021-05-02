@@ -57,12 +57,6 @@ func initConfig() {
 		cobra.CheckErr(err)
 
 
-		// file, err := ioutil.TempFile("dir", "prefix")
-		// if err != nil {
-		// 	log.Fatal(err)
-		// }
-		// defer os.Remove(file.Name())
-
 		// Search config in home directory with name ".corporate-proxy-cli" (without extension).
 		viper.AddConfigPath(home)
 		viper.SetConfigName(".corporate-proxy-cli")
@@ -73,5 +67,8 @@ func initConfig() {
 	// If a config file is found, read it in.
 	if err := viper.ReadInConfig(); err == nil {
 		fmt.Fprintln(os.Stderr, "Using config file:", viper.ConfigFileUsed())
+	} else {
+		viper.Set("Verbose", true)
+		viper.WriteConfig()
 	}
 }

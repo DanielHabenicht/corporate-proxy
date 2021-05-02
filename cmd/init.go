@@ -7,6 +7,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var HTTP_Proxy string
 // initCmd represents the init command
 var initCmd = &cobra.Command{
 	Use:   "init",
@@ -25,6 +26,8 @@ to quickly create a Cobra application.`,
 
 func init() {
 	rootCmd.AddCommand(initCmd)
+	rootCmd.PersistentFlags().StringVarP(&HTTP_Proxy, "http_proxy", "", "", "HTTP Proxy (required)")
+	rootCmd.MarkPersistentFlagRequired("http_proxy")
 
 	// Here you will define your flags and configuration settings.
 

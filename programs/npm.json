@@ -1,0 +1,4 @@
+{
+    "$schema": "./programs.json",
+    "command": "npm config set proxy ${PROXY}"
+}

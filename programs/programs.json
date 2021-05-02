@@ -1,0 +1,22 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "ProgramProxyConfiguration",
+    "type": "object",
+    "properties": {
+      "command": {
+        "type": "string",
+        "description": "The person's first name."
+      },
+      "file": {
+          "type": "object",
+          "properties": {
+              "path": {
+                  "type": "string"
+              },
+              "appendLine": {
+                  "type": "string"
+              }
+          }
+      }
+    }
+  }
